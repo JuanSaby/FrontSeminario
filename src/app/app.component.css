@@ -1,0 +1,28 @@
+nav {
+    background-color: #f8f9fa;  /* Color de fondo */
+    padding: 10px;              /* Espaciado alrededor del navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  }
+  
+  nav ul {
+    list-style-type: none;       /* Quitar puntos de la lista */
+    padding: 0;                  /* Quitar espaciado de la lista */
+    margin: 0;                   /* Quitar margen de la lista */
+  }
+  
+  nav li {
+    display: inline;             /* Mostrar elementos de la lista en línea */
+    margin-right: 15px;         /* Espaciado entre los elementos */
+  }
+  
+  nav a {
+    text-decoration: none;       /* Quitar subrayado de los enlaces */
+    color: #007bff;             /* Color del texto */
+    font-weight: bold;          /* Texto en negrita */
+  }
+  
+  nav a:hover {
+    text-decoration: underline;  /* Subrayar el enlace al pasar el mouse */
+    color: #0056b3;              /* Color más oscuro al pasar el mouse */
+  }
+  

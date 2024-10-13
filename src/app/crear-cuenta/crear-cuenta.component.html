@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="crear-cuenta.component.css">
+</head>
+<body>
+    <main class="signup-container">
+        <h2>Únete a ColaMimosa</h2>
+
+        <!-- Botones para unirse con Google y Facebook -->
+        <section class="social-signup">
+            <button class="google-btn" aria-label="Únete con Google">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Logo de Google">
+                Únete con Google
+            </button>
+            <button class="facebook-btn" aria-label="Continuar con Facebook">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Logo de Facebook">
+                Continuar con Facebook
+            </button>
+        </section>
+
+        <div class="separator">O con tu email</div>
+
+        <!-- Formulario de creación de cuenta -->
+        <form class="signup-form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="text" placeholder="Apellido" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Contraseña" required>
+            <input type="password" placeholder="Confirmar Contraseña" required>
+            <div class="terms">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">He leído y acepto las <a href="#">condiciones de uso</a> y la <a href="#">política de privacidad</a>.</label>
+            </div>
+            <button type="submit" class="signup-btn">Crear Cuenta</button>
+        </form>
+    </main>
+</body>
+</html>

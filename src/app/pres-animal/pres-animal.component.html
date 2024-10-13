@@ -1,0 +1,35 @@
+<header>
+    <div class="logo">Icono + Nombre</div>
+    <div class="auth-options">
+        <a href="#">🚀Iniciar sesión</a>
+        <a href="#">Crear una cuenta</a>
+    </div>
+</header>
+
+<!-- Botón para regresar a la lista de animales -->
+<a [routerLink]="['assets/data/animales.json']" class="back-button">⬅ Volver a la lista</a>
+
+<!-- Barra de búsqueda avanzada -->
+<div class="search-bar">
+    <input type="text" placeholder="Búsqueda avanzada">
+</div>
+
+<!-- Detalle del animal seleccionado -->
+<main *ngIf="animal"> <!-- Muestra los datos solo si el animal está disponible -->
+    <div class="animal-detail">
+        <img [src]="animal.imagen" alt="{{ animal.nombre }}">
+        <div class="info">
+            <p><strong>NOMBRE:</strong> {{ animal.nombre }}</p>
+            <p><strong>FECHA DE INGRESO:</strong> {{ animal.fechaIngreso }}</p>
+            <p><strong>ESPECIE:</strong> {{ animal.especie }}</p>
+            <p><strong>TAMAÑO:</strong> {{ animal.tamano }}</p>
+            <p><strong>PESO:</strong> {{ animal.peso }}kg</p>
+            <p><strong>EDAD:</strong> {{ animal.edad }} años</p>
+            <p><strong>VACUNADO:</strong> {{ animal.vacunado ? 'Sí' : 'No' }}</p>
+            <p><strong>CASTRADO:</strong> {{ animal.castrado ? 'Sí' : 'No' }}</p>
+            <p><strong>ESTADO:</strong> {{ animal.estado }}</p>
+            <p><strong>UBICACIÓN:</strong> 📍{{ animal.ubicacion }}</p>
+            <button (click)="adoptar()">Quiero adoptar 🎀</button>
+        </div>
+    </div>
+</main>
