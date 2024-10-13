@@ -22,6 +22,6 @@ export class HomeComponent implements OnInit {
   }
 
   seleccionarAnimal(id: number) {
-    this.router.navigate(['/detalle-animal', id]);
+    this.router.navigate(['/animal', id]);
   }
 }

@@ -1,26 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Observable, of } from 'rxjs'; // Importamos el array de animales
+import { ANIMALES } from '../../assets/data/animales-data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalService {
-  private url = 'assets/data/animales.json';  // Ruta al archivo JSON
+  private animales = ANIMALES;
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  // Método para obtener la lista de todos los animales
-  getAnimales(): Observable<any> {
-    return this.http.get(this.url);
+  // Método para obtener todos los animales
+  getAnimales(): Observable<any[]> {
+    return of(this.animales);
   }
 
-  // Método para obtener un animal por su ID
-  getAnimalById(id: number): Observable<any> {
-    return this.http.get<any[]>('assets/data/animales.json').pipe(
-      map((animales: any[]) => animales.find(animal => animal.id === id))
-    );
-  }  
+  // Método para buscar un animal por su ID
+  getAnimalById(id: number): Observable<any | undefined> {
+    const animal = this.animales.find(a => a.id === id);
+    return of(animal);
+  }
 }
-
-
