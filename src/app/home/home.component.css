@@ -2,13 +2,13 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #F7F2E7; /* Fondo neutral */
+    background-color: #FEFEE3; /* Fondo neutral */
     color: #333;
 }
 
 /* Header - Verde oscuro */
 header {
-    background-color: #1B4332; /* Verde más oscuro para el header */
+    background-color: #4C956C; /* Verde más oscuro para el header */
     color: white;
     padding: 15px;
     display: flex;
@@ -33,7 +33,7 @@ header {
 
 /* Barra de búsqueda avanzada - Verde más claro */
 .search-bar {
-    background-color: #40916C; /* Verde más claro para la barra de búsqueda */
+    background-color: #2C6E49; /* Verde más claro para la barra de búsqueda */
     padding: 20px;
     text-align: center;
 }

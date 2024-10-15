@@ -11,7 +11,7 @@ export const ANIMALES = [
       vacunado: "Sí",
       castrado: "Sí",
       estado: "Saludable",
-      imagen: "/assets/imagenes/alaska.jpg"
+      imagen: 'assets/images/alaska.jpg'
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export const ANIMALES = [
       vacunado: "Sí",
       castrado: "Sí",
       estado: "Saludable",
-      imagen: "/assets/imagenes/Raikou.jpg"
+      imagen: '/assets/imagenes/Raikou.jpg'
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export const ANIMALES = [
       vacunado: "No",
       castrado: "No",
       estado: "En recuperación",
-      imagen: "/assets/imagenes/Rexi.jpg"
+      imagen: '/assets/imagenes/Rexi.jpg'
     }
   ];
   

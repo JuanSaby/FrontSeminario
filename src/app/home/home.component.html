@@ -11,7 +11,7 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <span>ColaPeluda</span>
+            <span>Compañero Amigo</span>
         </div>
         <div class="auth-options">
             <a href="/inicio-sesion">🚀Iniciar sesión</a>
@@ -29,7 +29,7 @@
         <!-- Iteración sobre los animales obtenidos del servicio -->
         <div *ngFor="let animal of animales">
             <div class="animal-card" (click)="seleccionarAnimal(animal.id)">
-              <img [src]="animal.imagen" alt="{{ animal.nombre }}">
+                <img [src]="animal.imagen" alt="{{ animal.nombre }}" class="animal-image">
               <h3>{{ animal.nombre }}</h3>
               <p>📍{{ animal.ubicacion }}</p>
             </div>
