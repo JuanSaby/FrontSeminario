@@ -23,7 +23,7 @@ export class PresAnimalComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');  // Obtenemos el ID desde la ruta
     this.animalService.getAnimalById(Number(id)).subscribe(data => {
-      this.animal = data;  // Aquí guardamos los detalles del animal
+      this.animal = data; // Aquí guardamos los detalles del animal
     });
   }
   // Método para manejar la adopción

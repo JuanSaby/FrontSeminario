@@ -1,33 +1,23 @@
-/* header.component.css */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #4caf50;
-    padding: 10px;
-    color: white;
-  }
-  
-  .logo-section {
-    display: flex;
-    align-items: center;
-  }
-  
-  .icon {
-    width: 50px;
-    height: 50px;
-    background-color: #333;
-    margin-right: 10px;
-    border-radius: 50%;
-  }
-  
-  .user-actions a {
-    margin-left: 20px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .user-actions a:hover {
-    text-decoration: underline;
-  }
-  
+header {
+  background-color: #4C956C; /* Verde más oscuro para el header */
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.auth-options a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.auth-options a:hover {
+  text-decoration: underline;
+}

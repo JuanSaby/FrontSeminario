@@ -18,6 +18,7 @@ export class AnimalService {
   // Método para buscar un animal por su ID
   getAnimalById(id: number): Observable<any | undefined> {
     const animal = this.animales.find(a => a.id === id);
+    console.log(animal);
     return of(animal);
   }
 }

@@ -1,0 +1,1 @@
+export const esRefugio: boolean = false; 

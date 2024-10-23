@@ -2,7 +2,7 @@ export const ANIMALES = [
     {
       id: 1,
       nombre: "Alaska",
-      ubicacion: "Marco Juarez",
+      ubicacion: "Marcos Juarez",
       fechaIngreso: "12/05/2023",
       especie: "Canino",
       tamano: "Grande",
@@ -11,7 +11,7 @@ export const ANIMALES = [
       vacunado: "Sí",
       castrado: "Sí",
       estado: "Saludable",
-      imagen: "assets/iam"
+      imagen: "../../assets/imagen/alaska.jpg"
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export const ANIMALES = [
       vacunado: "Sí",
       castrado: "Sí",
       estado: "Saludable",
-      imagen:'assets/imagen/raikou.jpg'
+      imagen:"../../assets/imagen/Raikou.jpg"
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export const ANIMALES = [
       vacunado: "No",
       castrado: "No",
       estado: "En recuperación",
-      imagen: '/assets/imagenes/Rexi.jpg'
+      imagen:"../../assets/imagen/Rexi.jpg"
     }
   ];
   
