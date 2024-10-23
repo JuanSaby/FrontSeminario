@@ -4,41 +4,41 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #FEFEE3; /* Fondo neutral */
     color: #333;
-}
-
-/* Header - Verde oscuro */
-header {
+  }
+  
+  /* Header - Verde oscuro */
+  header {
     background-color: #4C956C; /* Verde más oscuro para el header */
     color: white;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo {
+  }
+  
+  .logo {
     font-size: 1.5em;
     font-weight: bold;
-}
-
-.auth-options a {
+  }
+  
+  .auth-options a {
     color: white;
     text-decoration: none;
     margin-left: 15px;
-}
-
-.auth-options a:hover {
+  }
+  
+  .auth-options a:hover {
     text-decoration: underline;
-}
-
-/* Barra de búsqueda avanzada - Verde más claro */
-.search-bar {
+  }
+  
+  /* Barra de búsqueda avanzada - Verde más claro */
+  .search-bar {
     background-color: #2C6E49; /* Verde más claro para la barra de búsqueda */
     padding: 20px;
     text-align: center;
-}
-
-.search-bar input {
+  }
+  
+  .search-bar input {
     width: 60%;
     padding: 10px;
     border-radius: 25px;
@@ -46,19 +46,19 @@ header {
     font-size: 1em;
     outline: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Contenedor de tarjetas de animales */
-.animal-container {
+  }
+  
+  /* Contenedor de tarjetas de animales */
+  .animal-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     padding: 20px;
     flex-wrap: wrap; /* Para permitir que las tarjetas se envuelvan */
-}
-
-/* Tarjetas de animales */
-.animal-card {
+  }
+  
+  /* Tarjetas de animales */
+  .animal-card {
     background-color: #F4A29A; /* Rosa cálido para contraste */
     border-radius: 15px;
     padding: 15px;
@@ -67,43 +67,123 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     margin-bottom: 20px; /* Espacio inferior entre tarjetas */
-}
-
-.animal-card:hover {
+  }
+  
+  .animal-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.animal-card img {
+  }
+  
+  .animal-card img {
     width: 100%;
     height: 120px;
     object-fit: cover;
     border-radius: 10px;
-}
-
-.animal-card h3 {
+  }
+  
+  .animal-card h3 {
     color: #333;
     font-size: 1.2em;
     margin: 10px 0 5px 0;
-}
-
-.animal-card p {
+  }
+  
+  .animal-card p {
     color: #666;
     font-size: 0.9em;
-}
-
-/* Responsividad */
-@media (max-width: 768px) {
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
     .search-bar input {
-        width: 80%;
+      width: 80%;
     }
-
     .animal-container {
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
-
     .animal-card {
-        width: 80%;
+      width: 80%;
     }
-}
+  }
+  
+  /* Barra de navegación */
+  .navbar {
+    background-color: #4CAF50; /* verde */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
+    color: white;
+  }
+  
+  .navbar .links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .navbar .links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Búsqueda avanzada */
+  .advanced-search {
+    background-color: #f2f2f2; /* gris claro */
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Filtros */
+  .filters {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .filters .filter {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* Resultados */
+  .results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .results .item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  /* Paginación */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination .page-number {
+    margin: 0 5px;
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+  }
+  
+  .pagination .page-number:hover {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+  

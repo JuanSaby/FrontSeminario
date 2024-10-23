@@ -3,70 +3,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     font-family: Arial, sans-serif;
     background-color: #363d27;  /* Fondo oscuro para contraste */
     color: #333;
-}
-
-/* Header */
-header {
+  }
+  
+  /* Header */
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #c17a44;  /* Fondo marrón claro */
     padding: 15px 30px;
     color: white;
-}
-
-.logo {
+  }
+  
+  .logo {
     font-size: 22px;
     font-weight: bold;
-}
-
-.auth-options a {
+  }
+  
+  .auth-options a {
     margin-left: 20px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
-
-.auth-options a:hover {
+  }
+  
+  .auth-options a:hover {
     text-decoration: underline;
-}
-
-/* Botón para volver atrás */
-.back-button {
+  }
+  
+  /* Botón para volver atrás */
+  .back-button {
     margin: 20px;
     color: #f1c38f;  /* Tono cálido */
     text-decoration: none;
     font-size: 30px;
     font-weight: bold;
-}
-
-.back-button:hover {
+  }
+  
+  .back-button:hover {
     text-decoration: underline;
-}
-
-/* Barra de búsqueda avanzada */
-.search-bar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px 30px;
-}
-
-.search-bar input {
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    width: 300px;
-    background-color: #f7e9d0; /* Color más suave para la búsqueda */
-}
-
-/* Animal detail layout */
-.animal-detail {
+  }
+  /* Animal detail layout */
+  .animal-detail {
     display: flex;
     justify-content: space-between;
     background-color: #fff7db;  /* Fondo claro para el contenido */
@@ -76,30 +60,30 @@ header {
     border: 2px solid #c17a44;  /* Bordes que combinen con el header */
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
-}
-
-.animal-detail img {
+  }
+  
+  .animal-detail img {
     width: 250px;
     height: 250px;
     border-radius: 10px;
     border: 2px solid #ccc;  /* Borde suave en la imagen */
-}
-
-.info {
+  }
+  
+  .info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 30px;
     flex-grow: 1;
-}
-
-.info p {
+  }
+  
+  .info p {
     margin-bottom: 12px;
     font-size: 16px;
     color: #444;
-}
-
-button {
+  }
+  
+  button {
     padding: 12px 30px;
     background-color: #75917b;  /* Verde suave */
     color: white;
@@ -110,8 +94,75 @@ button {
     font-weight: bold;
     align-self: flex-end;
     transition: background-color 0.3s ease;
-}
-
-button:hover {
+  }
+  
+  button:hover {
     background-color: #5f7462;  /* Un poco más oscuro al pasar el mouse */
-}
+  }
+  
+  /* Presentación del animal seleccionado */
+  .animal-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .animal-presentation .back-button {
+    align-self: flex-start;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .animal-presentation .back-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .animal-presentation .animal-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .animal-presentation .animal-details {
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .animal-presentation .animal-details h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .animal-presentation .animal-details p {
+    color: #666;
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  
+  .animal-presentation .adopt-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .animal-presentation .adopt-button:hover {
+    background-color: #3e8e41;
+  }
+  

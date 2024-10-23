@@ -29,11 +29,12 @@
         <!-- Iteración sobre los animales obtenidos del servicio -->
         <div *ngFor="let animal of animales">
             <div class="animal-card" (click)="seleccionarAnimal(animal.id)">
-                <img [src]="animal.imagen" alt="{{ animal.nombre }}" class="animal-image">
+                <img [src]="animal.imagen" alt="{{ animal.nombre }}" />
               <h3>{{ animal.nombre }}</h3>
               <p>📍{{ animal.ubicacion }}</p>
             </div>
           </div>
     </div>
+    
 </body>
 </html>

@@ -8,4 +8,3 @@ export interface Pet {
     descripcion: string;
     imagen: string;
   }
-  

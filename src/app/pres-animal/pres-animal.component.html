@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación de Animales</title>
+  <link rel="stylesheet" href="pres-animal.component.css">
+</head>
+<body>
 <header>
     <div class="logo">Icono + Nombre</div>
     <div class="auth-options">
@@ -7,12 +16,9 @@
 </header>
 
 <!-- Botón para regresar a la lista de animales -->
-<a [routerLink]="['/home']" class="back-button">⬅ Volver a la lista</a>
+<a [routerLink]="['/home']" class="back-button">⬅</a>
 
-<!-- Barra de búsqueda avanzada -->
-<div class="search-bar">
-    <input type="text" placeholder="Búsqueda avanzada">
-</div>
+
 
 <!-- Detalle del animal seleccionado -->
 <main *ngIf="animal"> <!-- Muestra los datos solo si el animal está disponible -->
@@ -33,3 +39,5 @@
         </div>
     </div>
 </main>
+</body>
+</html>
