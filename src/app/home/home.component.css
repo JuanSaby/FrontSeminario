@@ -48,48 +48,42 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-  /* Contenedor de tarjetas de animales */
-  .animal-container {
+  .publicacion {
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
     justify-content: center;
-    gap: 20px;
     padding: 20px;
-    flex-wrap: wrap; /* Para permitir que las tarjetas se envuelvan */
   }
   
-  /* Tarjetas de animales */
-  .animal-card {
-    background-color: #F4A29A; /* Rosa cálido para contraste */
-    border-radius: 15px;
-    padding: 15px;
-    width: 180px;
+  .publicacion-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    padding: 16px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 20px; /* Espacio inferior entre tarjetas */
+    transition: transform 0.3s;
   }
   
-  .animal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .publicacion-card:hover {
+    transform: scale(1.05);
   }
   
-  .animal-card img {
+  .publicacion-card img {
     width: 100%;
-    height: 120px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
   }
   
-  .animal-card h3 {
-    color: #333;
+  .publicacion-card h3 {
+    margin: 8px 0;
     font-size: 1.2em;
-    margin: 10px 0 5px 0;
   }
   
-  .animal-card p {
-    color: #666;
-    font-size: 0.9em;
+  .publicacion-card p {
+    color: #555;
   }
   
   /* Responsividad */
@@ -186,4 +180,48 @@ body {
     color: white;
     cursor: pointer;
   }
-  
+  .button-container {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.button {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Centrar texto */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Permite el espaciado entre botones */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 4px; /* Espacio entre botones */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.button:hover {
+    background-color: #45a049; /* Color de fondo al pasar el mouse */
+}
+.adopt-button {
+  background-color: #4C956C; /* Color de fondo verde */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  font-size: 1em; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  margin-left: 10px; /* Espaciado a la izquierda */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.adopt-button:hover {
+  background-color: #3b7a54; /* Color de fondo más oscuro al pasar el mouse */
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.adopt-button:focus {
+  outline: none; /* Elimina el contorno al hacer clic */
+  box-shadow: 0 0 5px rgba(76, 149, 108, 0.5); /* Sombra al hacer clic */
+}

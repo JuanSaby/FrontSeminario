@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,41 +8,53 @@
 </head>
 <body>
 
-    <div class="login-container">
-        <h2>Iniciar sesión</h2>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Iniciar sesión</h3>
 
-        <!-- Botones para iniciar sesión con Google y Facebook -->
-        <div class="social-login">
-            <button class="google-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo">
-                Continuar con Google
-            </button>
-            <button class="facebook-btn">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
-                Continuar con Facebook
-            </button>
-        </div>
+                        <!-- Botones para iniciar sesión con Google y Facebook -->
+                        <div class="social-login text-center mb-3">
+                            <button class="google-btn">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo">
+                                Continuar con Google
+                            </button>
+                            <button class="facebook-btn">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+                                Continuar con Facebook
+                            </button>
+                        </div>
 
-        <div class="separator">O con Gmail</div>
+                        <div class="separator text-center">O con Gmail</div>
 
-        <!-- Formulario de inicio de sesión con correo electrónico -->
-        <form class="login-form" action="#" method="POST">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" required>
-
-            <div class="forgot-password">
-                <a href="#">¿Has olvidado la contraseña?</a>
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" class="form-control" formControlName="email" required>
+                                <div *ngIf="submitted && loginForm.get('email')?.errors" class="text-danger">
+                                    Email inválido
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" id="password" class="form-control" formControlName="password" required>
+                                <div *ngIf="submitted && loginForm.get('password')?.errors" class="text-danger">
+                                    La contraseña debe contener al menos 8 caracteres
+                                </div>
+                            </div>
+                            <div class="forgot-password mb-3">
+                                <a href="#">¿Has olvidado la contraseña?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" style="margin-bottom: 20px;">Iniciar sesión</button>
+                        </form>
+                        <div class="create-account text-center">
+                            ¿Aún no tienes cuenta? <button class="btn btn-link" (click)="registrar()">Haz clic aquí para crear una cuenta</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <button type="submit" class="login-btn">Iniciar sesión</button>
-        </form>
-
-        <!-- Enlace para crear una cuenta nueva -->
-        <div class="create-account">
-            ¿Aún no tienes cuenta? <a href="#">Haz clic aquí para crear una cuenta</a>
         </div>
     </div>
 

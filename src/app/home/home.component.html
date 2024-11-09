@@ -9,21 +9,31 @@
 <body>
    <app-header></app-header>
 
-    <!-- Barra de búsqueda avanzada -->
-    <div class="search-bar">
-        <input type="text" placeholder="Búsqueda avanzada">
+   <!-- Barra de búsqueda avanzada -->
+   <div class="search-bar">
+       <input type="text" id="searchInput" placeholder="Búsqueda avanzada">
+       <button onclick="performSearch()">Buscar</button>
+       <div *ngIf="isLoggedIn() && hasRole(2)">
+        <button class="adopt-button" (click)="adoptar()">Adoptar</button>
     </div>
+    
+   </div>
 
-    <!-- Contenedor dinámico de tarjetas de animales -->
-    <div class="animal-container">
-        <!-- Iteración sobre los animales obtenidos del servicio -->
-        <div *ngFor="let animal of animales">
-            <div class="animal-card" (click)="seleccionarAnimal(animal.id)">
-                <img [src]="animal.imagen" alt="{{ animal.nombre }}" />
-              <h3>{{ animal.nombre }}</h3>
-              <p>📍{{ animal.ubicacion }}</p>
-            </div>
-          </div>
-    </div> 
+   <div class="button-container">
+       <button class="button" (click)="filtrarGatos()">🐈Gatos</button>
+       <button class="button" (click)="filtrarPerros()">🦮Perros</button>
+   </div>
+
+   <!-- Contenedor dinámico de tarjetas de animales -->
+   <div class="publicacion">
+       <!-- Iteración sobre los animales obtenidos del servicio -->
+       <div *ngFor="let publicacion of publicaciones">
+           <div class="publicacion-card" (click)="seleccionarPublicacion(publicacion.id)">
+               <img [src]="publicacion.imagen" alt="{{ publicacion.mascota.name }}" />
+               <h3>{{ publicacion.mascota.name }}</h3>
+               <p>📍{{ publicacion.Ciudad }}</p>
+           </div>
+       </div>
+   </div> 
 </body>
 </html>

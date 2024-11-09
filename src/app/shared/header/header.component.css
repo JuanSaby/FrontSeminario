@@ -21,3 +21,17 @@ header {
 .auth-options a:hover {
   text-decoration: underline;
 }
+
+/* Estilos para el botón de cerrar sesión */
+.logout-button {
+  background-color: transparent; /* Fondo transparente */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  font-size: 1em; /* Tamaño de fuente igual al de los enlaces */
+  margin-left: 15px; /* Espaciado a la izquierda */
+}
+
+.logout-button:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}

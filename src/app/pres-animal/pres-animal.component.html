@@ -1,30 +1,24 @@
-<header>
-    <div class="logo">Icono + Nombre</div>
-    <div class="auth-options">
-        <a [routerLink]="['/inicio-sesion']">🚀Iniciar sesión</a>
-        <a [routerLink]="['/crear-cuenta']">Crear una cuenta</a>
-    </div>
-</header>
+<app-header></app-header> <!-- Agrega el componente de encabezado aquí -->
 
 <!-- Botón para regresar a la lista de animales -->
 <a [routerLink]="['/home']" class="back-button">⬅</a>
-
-<!-- Detalle del animal seleccionado -->
-<main *ngIf="animal"> <!-- Muestra los datos solo si el animal está disponible -->
+<main *ngIf="publicacion">
     <div class="animal-detail">
-        <img src= {{animal.imagen}} alt="{{ animal.nombre }}">
+        <!--<img [src]="publicacion.mascota.imagen" alt="{{ publicacion.mascota.name }}"> -->
         <div class="info">
-            <p><strong>NOMBRE:</strong> {{ animal.nombre }}</p>
-            <p><strong>FECHA DE INGRESO:</strong> {{ animal.fechaIngreso }}</p>
-            <p><strong>ESPECIE:</strong> {{ animal.especie }}</p>
-            <p><strong>TAMAÑO:</strong> {{ animal.tamano }}</p>
-            <p><strong>PESO:</strong> {{ animal.peso }}</p>
-            <p><strong>EDAD:</strong> {{ animal.edad }} años</p>
-            <p><strong>VACUNADO:</strong> {{ animal.vacunado ? 'Sí' : 'No' }}</p>
-            <p><strong>CASTRADO:</strong> {{ animal.castrado ? 'Sí' : 'No' }}</p>
-            <p><strong>ESTADO:</strong> {{ animal.estado }}</p>
-            <p><strong>UBICACIÓN:</strong> 📍{{ animal.ubicacion }}</p>
+            <p><strong>NOMBRE:</strong> {{ publicacion.mascota.name }}</p>
+            <p><strong>FECHA DE INGRESO:</strong> {{ publicacion.mascota.fechaIngreso }}</p>
+            <p><strong>ESPECIE:</strong> {{ publicacion.mascota.especie.name }}</p> <!-- Asegúrate de acceder al nombre -->
+            <p><strong>TAMAÑO:</strong> {{ publicacion.mascota.tamanio }}</p>
+            <p><strong>PESO:</strong> {{ publicacion.mascota.peso }} kg</p>
+            <p><strong>EDAD:</strong> {{ publicacion.mascota.edad }} años</p>
+            <p><strong>VACUNADO:</strong> {{ publicacion.mascota.vacunado ? 'Sí' : 'No' }}</p>
+            <p><strong>CASTRADO:</strong> {{ publicacion.mascota.castrado ? 'Sí' : 'No' }}</p>
+            <p><strong>UBICACIÓN:</strong> 📍{{ publicacion.Ciudad }}</p>
             <button (click)="adoptar()">Quiero adoptar 🎀</button>
         </div>
     </div>
 </main>
+<ng-template #loadingTemplate>
+    <p>Cargando datos del animal...</p>
+</ng-template>
