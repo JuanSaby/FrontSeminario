@@ -4,7 +4,7 @@
 <a [routerLink]="['/home']" class="back-button">⬅</a>
 <main *ngIf="publicacion">
     <div class="animal-detail">
-        <!--<img [src]="publicacion.mascota.imagen" alt="{{ publicacion.mascota.name }}"> -->
+        <img [src]="'assets/imagen/' + publicacion.mascota.name + publicacion.mascota.id + '.jpg'" alt="Imagen de {{ publicacion.mascota.name }}" class="image">
         <div class="info">
             <p><strong>NOMBRE:</strong> {{ publicacion.mascota.name }}</p>
             <p><strong>FECHA DE INGRESO:</strong> {{ publicacion.mascota.fechaIngreso }}</p>

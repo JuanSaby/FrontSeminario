@@ -12,6 +12,15 @@ header {
   font-weight: bold;
 }
 
+.logo-link {
+  color: white; /* Color del texto del logo */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.logo-link:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
 .auth-options a {
   color: white;
   text-decoration: none;

@@ -18,16 +18,16 @@ export class HomeComponent implements OnInit {
   user:any
 
   constructor(private router: Router, private service:PublicacionServicess) {
-    this.user = this.getUserData();
+    //this.user = this.getUserData();
   }
 
   ngOnInit(): void {
     this.getAllPublicaciones();
 }
-getUserData() {
-    const userData = localStorage.getItem('user');
-    return userData ? JSON.parse(userData) : null; // Devuelve los datos del usuario o null
-}
+//getUserData() {
+//    const userData = localStorage.getItem('user');
+//    return userData ? JSON.parse(userData) : null; // Devuelve los datos del usuario o null
+//}
 getAllPublicaciones(): void {
     this.service.getAllPublicaciones().subscribe({
         next: (data: Publicacion[]) => {

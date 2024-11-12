@@ -29,7 +29,10 @@
        <!-- Iteración sobre los animales obtenidos del servicio -->
        <div *ngFor="let publicacion of publicaciones">
            <div class="publicacion-card" (click)="seleccionarPublicacion(publicacion.id)">
-               <img [src]="publicacion.imagen" alt="{{ publicacion.mascota.name }}" />
+            <img [src]="'assets/imagen/' + publicacion.mascota.name + publicacion.mascota.id + '.jpg'" 
+            alt="{{ publicacion.mascota.name }}" 
+            class="image" />
+       
                <h3>{{ publicacion.mascota.name }}</h3>
                <p>📍{{ publicacion.Ciudad }}</p>
            </div>

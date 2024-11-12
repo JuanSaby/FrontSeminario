@@ -49,18 +49,20 @@
   .back-button:hover {
     text-decoration: underline;
   }
-  /* Animal detail layout */
-  .animal-detail {
-    display: flex;
-    justify-content: space-between;
-    background-color: #fff7db;  /* Fondo claro para el contenido */
-    padding: 30px;
-    margin: 20px auto;
-    width: 85%;
-    border: 2px solid #c17a44;  /* Bordes que combinen con el header */
-    border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
-  }
+ /* Animal detail layout */
+.animal-detail {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff7db;  /* Fondo claro para el contenido */
+  padding: 30px;
+  margin: 20px auto;
+  width: 70%; /* Cambia el ancho a 70% o el valor que prefieras */
+  max-width: 800px; /* Establece un ancho máximo para pantallas grandes */
+  border: 2px solid #c17a44;  /* Bordes que combinen con el header */
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra ligera */
+}
+
   
   .animal-detail img {
     width: 250px;

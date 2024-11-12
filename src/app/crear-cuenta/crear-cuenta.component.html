@@ -1,42 +1,75 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cuenta</title>
-    <link rel="stylesheet" href="crear-cuenta.component.css">
-</head>
-<body>
-    <main class="signup-container">
-        <h2>Únete a ColaMimosa</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Register</h3>
+                    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label for="userType" class="form-label">Que sos?</label>
+                            <select id="userType" class="form-select" formControlName="userType">
+                                <option value="adoptante">Adoptante</option>
+                                <option value="refugio">Refugio</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" id="email" class="form-control" formControlName="email">
+                            <div *ngIf="submitted && registerForm.get('email')?.errors" class="text-danger">
+                                Invalid Email
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" id="password" class="form-control" formControlName="password">
+                            <div *ngIf="submitted && registerForm.get('password')?.errors" class="text-danger">
+                                Password must contain at least 8 characters
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">Nombre</label>
+                            <input type="text" id="firstName" class="form-control" formControlName="firstName">
+                            <div *ngIf="submitted && registerForm.get('firstName')?.errors" class="text-danger">
+                                FirstName must contain at least 2 characters
+                            </div>
+                        </div>
+                        
+                        <!-- Campo solo para Adoptante -->
+                        <div class="mb-3" *ngIf="registerForm.get('userType')?.value === 'adoptante'">
+                            <label for="lastName" class="form-label">Apellido</label>
+                            <input type="text" id="lastName" class="form-control" formControlName="lastName">
+                            <div *ngIf="submitted && registerForm.get('lastName')?.errors" class="text-danger">
+                                LastName must contain at least 2 characters
+                            </div>
+                        </div>
 
-        <!-- Botones para unirse con Google y Facebook -->
-        <section class="social-signup">
-            <button class="google-btn" aria-label="Únete con Google">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Logo de Google">
-                Únete con Google
-            </button>
-            <button class="facebook-btn" aria-label="Continuar con Facebook">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Logo de Facebook">
-                Continuar con Facebook
-            </button>
-        </section>
+                        <!-- Campo solo para Refugio -->
+                        <div class="mb-3" *ngIf="registerForm.get('userType')?.value === 'refugio'">
+                            <label for="description" class="form-label">Descripcion</label>
+                            <textarea id="description" class="form-control" formControlName="description"></textarea>
+                            <div *ngIf="submitted && registerForm.get('description')?.errors" class="text-danger">
+                                Description is required for refugios
+                            </div>
+                        </div>
 
-        <div class="separator">O con tu email</div>
-
-        <!-- Formulario de creación de cuenta -->
-        <form class="signup-form">
-            <input type="text" placeholder="Nombre" required>
-            <input type="text" placeholder="Apellido" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Contraseña" required>
-            <input type="password" placeholder="Confirmar Contraseña" required>
-            <div class="terms">
-                <input type="checkbox" id="terms" required>
-                <label for="terms">He leído y acepto las <a href="#">condiciones de uso</a> y la <a href="#">política de privacidad</a>.</label>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Dirección</label>
+                            <input type="text" id="address" class="form-control" formControlName="address">
+                            <div *ngIf="submitted && registerForm.get('address')?.errors" class="text-danger">
+                                Address is required
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Número de teléfono</label>
+                            <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber">
+                            <div *ngIf="submitted && registerForm.get('phoneNumber')?.errors" class="text-danger">
+                                Invalid phone number
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Registro</button>
+                    </form>
+                </div>
             </div>
-            <button type="submit" class="signup-btn">Crear Cuenta</button>
-        </form>
-    </main>
-</body>
-</html>
+        </div>
+    </div>
+</div>

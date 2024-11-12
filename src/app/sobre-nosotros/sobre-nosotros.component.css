@@ -1,0 +1,37 @@
+.titulo {
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio inferior para separar del contenido */
+    font-size: 2em; /* Tamaño de fuente más grande */
+    color: #2c3e50; /* Color del texto */
+}
+
+.image-container {
+    display: flex; /* Usar flexbox para alinear las imágenes */
+    justify-content: center; /* Centrar las imágenes horizontalmente */
+    gap: 10px; /* Espacio entre las imágenes */
+}
+
+.image {
+    width: 45%; /* Ajusta el ancho de las imágenes */
+    max-height: 450px; /* Limita el alto máximo */
+    height: auto; /* Mantiene la proporción */
+    object-fit: cover; /* Recorta la imagen si es necesario */
+}
+
+.text-container {
+    margin-top: 20px; /* Espacio superior para separar del contenido anterior */
+    text-align: center; /* Centrar el texto */
+    font-family: 'Arial', sans-serif; /* Fuente más amigable */
+    line-height: 1.6; /* Mejora la legibilidad */
+    color: #333; /* Color del texto */
+}
+
+.text-container p {
+    margin: 10px 0; /* Espacio entre párrafos */
+    font-size: 1.1em; /* Aumenta ligeramente el tamaño de la fuente */
+}
+
+.text-container h2 {
+    margin-top: 20px; /* Espacio superior para los subtítulos */
+    color: #2980b9; /* Color para los subtítulos */
+}
