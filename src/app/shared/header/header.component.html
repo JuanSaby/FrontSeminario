@@ -1,12 +1,14 @@
 <header class="main-header">
     <div class="logo">
-        <a href="/home" class="logo-link"><span>Compañero Amigo</span></a>
+        <a href="/home" class="logo-link"><span>GUAU</span></a>
     </div>
     <div class="auth-options">
         <a href="/sobre-nosotros">Sobre nosotros</a>
         <a href="/mi-perfil">✋Mi Perfil</a>
-        <a href="/inicio-sesion">🚀Iniciar sesión</a>
-        <a href="/crear-cuenta">Crear una cuenta</a>
-        <button (click)="logout()" class="logout-button">🚪Cerrar sesión</button>
+        <!-- Mostrar solo si no está logueado -->
+        <a *ngIf="!isLoggedIn()" href="/inicio-sesion">🚀Iniciar sesión</a>
+        <a *ngIf="!isLoggedIn()" href="/crear-cuenta">Crear una cuenta</a>
+        <!-- Mostrar solo si está logueado -->
+        <button *ngIf="isLoggedIn()" (click)="logout()" class="logout-button">🚪Cerrar sesión</button>
     </div>
 </header>

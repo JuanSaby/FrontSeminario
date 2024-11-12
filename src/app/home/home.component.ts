@@ -14,74 +14,78 @@ import { Publicacion } from '../interfaces/publicaciones';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  publicaciones: any[] = [];// Cambiar a false si no es un refugio
-  user:any
+  publicaciones: any[] = []; // Cambiar a false si no es un refugio
+  user: any; // Guardar los datos del usuario logeado
 
-  constructor(private router: Router, private service:PublicacionServicess) {
-    //this.user = this.getUserData();
-  }
+  constructor(private router: Router, private service: PublicacionServicess) {}
 
   ngOnInit(): void {
     this.getAllPublicaciones();
-}
-//getUserData() {
-//    const userData = localStorage.getItem('user');
-//    return userData ? JSON.parse(userData) : null; // Devuelve los datos del usuario o null
-//}
-getAllPublicaciones(): void {
+    this.getUserData(); // Obtener datos del usuario
+    console.log('Usuario cargado:', this.user);
+  }
+
+  getUserData(): void {
+    const userData = localStorage.getItem('user');
+    this.user = userData ? JSON.parse(userData) : null; // Devuelve los datos del usuario o null
+  }
+
+  getAllPublicaciones(): void {
     this.service.getAllPublicaciones().subscribe({
-        next: (data: Publicacion[]) => {
-            this.publicaciones = data;
-        },
-        error: (error: any) => {
-            console.error('Error al obtener publicaciones:', error);
-        }
+      next: (data: Publicacion[]) => {
+        this.publicaciones = data;
+      },
+      error: (error: any) => {
+        console.error('Error al obtener publicaciones:', error);
+      }
     });
-}
+  }
 
-filtrarGatos(): void {
+  filtrarGatos(): void {
     this.service.getPublicacionesPorEspecie(2).subscribe({
-        next: (data: Publicacion[]) => {
-            this.publicaciones = data;
-        },
-        error: (error: any) => {
-            console.error('Error al filtrar gatos:', error);
-        }
+      next: (data: Publicacion[]) => {
+        this.publicaciones = data;
+      },
+      error: (error: any) => {
+        console.error('Error al filtrar gatos:', error);
+      }
     });
-}
+  }
 
-filtrarPerros(): void {
+  filtrarPerros(): void {
     this.service.getPublicacionesPorEspecie(1).subscribe({
-        next: (data: Publicacion[]) => {
-            this.publicaciones = data;
-        },
-        error: (error: any) => {
-            console.error('Error al filtrar perros:', error);
-        }
+      next: (data: Publicacion[]) => {
+        this.publicaciones = data;
+      },
+      error: (error: any) => {
+        console.error('Error al filtrar perros:', error);
+      }
     });
-}
+  }
+
   seleccionarPublicacion(id: number) {
-    // Si es refugio, redirigir a inicio-sesion
     if (esRefugio) {
       this.router.navigate(['/inicio-sesion']);
     } else {
-      // De lo contrario, redirigir al animal específico
       this.router.navigate(['/publicacion', id]);
     }
   }
+
   isLoggedIn(): boolean {
     const token = localStorage.getItem('token');
     return !!token; // Devuelve true si hay un token
+  }
+
+  hasRole(roleId: number): boolean {
+    console.log('Rol del usuario:', this.user?.role_id); // Verificar el rol
+    return this.user?.role.id === roleId; // Verifica si el role_id coincide
 }
 
-hasRole(roleId: number): boolean {
-    return this.user?.role_id === roleId; // Verifica si el role_id coincide
-}
 
-adoptar() {
+  adoptar() {
     if (this.isLoggedIn()) {
-        console.log(`Adopción solicitada para: ${this.user?.name}`); // Usa los datos del usuario
-        // Lógica adicional para la adopción
-}
-}
+      console.log(`Adopción solicitada para: ${this.user?.name}`); // Usa los datos del usuario
+      // Lógica adicional para la adopción
+    }
+  }
 }

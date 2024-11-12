@@ -3,10 +3,25 @@
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title text-center">Register</h3>
+                    <h3 class="card-title text-center">Crear Cuenta</h3>
+
+                     <!-- Botones para registro con Google y Facebook alineados horizontalmente -->
+                     <div class="social-login text-center mb-3 d-flex justify-content-between">
+                        <button class="google-btn mr-2" style="width: 48%;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo">
+                            Continuar con Google
+                        </button>
+                        <button class="facebook-btn" style="width: 48%;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+                            Continuar con Facebook
+                        </button>
+                    </div>
+
+                    <div class="separator text-center">O completa el formulario</div>
+
                     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                         <div class="mb-3">
-                            <label for="userType" class="form-label">Que sos?</label>
+                            <label for="userType" class="form-label">¿Qué sos?</label>
                             <select id="userType" class="form-select" formControlName="userType">
                                 <option value="adoptante">Adoptante</option>
                                 <option value="refugio">Refugio</option>
@@ -33,7 +48,7 @@
                                 FirstName must contain at least 2 characters
                             </div>
                         </div>
-                        
+
                         <!-- Campo solo para Adoptante -->
                         <div class="mb-3" *ngIf="registerForm.get('userType')?.value === 'adoptante'">
                             <label for="lastName" class="form-label">Apellido</label>
@@ -45,7 +60,7 @@
 
                         <!-- Campo solo para Refugio -->
                         <div class="mb-3" *ngIf="registerForm.get('userType')?.value === 'refugio'">
-                            <label for="description" class="form-label">Descripcion</label>
+                            <label for="description" class="form-label">Descripción</label>
                             <textarea id="description" class="form-control" formControlName="description"></textarea>
                             <div *ngIf="submitted && registerForm.get('description')?.errors" class="text-danger">
                                 Description is required for refugios
