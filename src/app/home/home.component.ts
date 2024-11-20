@@ -5,6 +5,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { esRefugio } from '../../assets/constants';
 import { PublicacionServicess } from '../back/publicaciones.service';
 import { Publicacion } from '../interfaces/publicaciones';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   publicaciones: any[] = []; // Cambiar a false si no es un refugio
   user: any; // Guardar los datos del usuario logeado
 
-  constructor(private router: Router, private service: PublicacionServicess) {}
+  constructor(private router: Router, private service: PublicacionServicess, authService:AuthService) {}
 
   ngOnInit(): void {
     this.getAllPublicaciones();
@@ -71,11 +72,6 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  isLoggedIn(): boolean {
-    const token = localStorage.getItem('token');
-    return !!token; // Devuelve true si hay un token
-  }
-
   hasRole(roleId: number): boolean {
     console.log('Rol del usuario:', this.user?.role_id); // Verificar el rol
     return this.user?.role.id === roleId; // Verifica si el role_id coincide
@@ -83,9 +79,6 @@ export class HomeComponent implements OnInit {
 
 
   adoptar() {
-    if (this.isLoggedIn()) {
-      console.log(`Adopción solicitada para: ${this.user?.name}`); // Usa los datos del usuario
-      // Lógica adicional para la adopción
-    }
+    this.router.navigate(['/publicarMascota']);
   }
 }

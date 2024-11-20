@@ -32,3 +32,17 @@ export interface Especie{
   id:number;
   name:string;
 }
+
+export interface Mascota{
+    id: number;
+    name:string;
+    especie:Especie;
+    peso: number;
+    tamanio: string;
+    fechaIngreso: Date;
+    edad: number;
+    vacunado: boolean;
+    castrado: boolean;
+    estadoSalud: number;
+    raza: number;
+}

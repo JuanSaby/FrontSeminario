@@ -10,7 +10,7 @@ import { LoginI, RegisterI, TokenI } from '../interfaces/token';
 })
 export class AuthService {
   url = 'http://localhost:3000';
-
+  user: any; // Guardar los datos del usuario logeado
   constructor() {}
 
   async login(body: LoginI): Promise<TokenI> {
@@ -62,4 +62,22 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('token')
   }
+  isLoggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token; // Devuelve true si hay un token
+  }
+  getUserData(): void {
+    const userData = localStorage.getItem('user');
+    this.user = userData ? JSON.parse(userData) : null;
+  }
+  
+  getUserId(): number | null {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      const user = JSON.parse(userData);
+      return user.id || null; // Asegúrate de que `user.id` sea el ID del refugio
+    }
+    return null;
+  }
+  
 }

@@ -1,0 +1,29 @@
+<app-header></app-header> <!-- Agrega el componente de encabezado aquí -->
+
+<div class="container">
+    <h2>Publicar Mascota</h2>
+    <form [formGroup]="publicarForm" (ngSubmit)="onSubmit()">
+      <!-- Seleccionar Mascota -->
+      <div class="form-group">
+        <label for="mascota">Selecciona una mascota:</label>
+        <select id="mascota" class="form-control" formControlName="mascota">
+          <option *ngFor="let mascota of mascotas" [value]="mascota.id">{{ mascota.nombre }}</option>
+        </select>
+        <button type="button" class="btn btn-link" (click)="irARegistrarMascota()">
+          + Agregar nueva mascota
+        </button>
+      </div>
+  
+      <!-- Seleccionar Ciudad -->
+      <div class="form-group">
+        <label for="ciudad">Ciudad de origen:</label>
+        <select id="ciudad" class="form-control" formControlName="ciudad">
+          <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+        </select>
+      </div>
+  
+      <!-- Botón de enviar -->
+      <button type="submit" class="btn btn-primary" [disabled]="publicarForm.invalid">Publicar</button>
+    </form>
+  </div>
+  

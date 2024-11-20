@@ -5,6 +5,8 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { CrearCuentaComponent } from './crear-cuenta/crear-cuenta.component';
 import { SobreNosotrosComponent } from './sobre-nosotros/sobre-nosotros.component';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
+import { PublicarMascotaComponent } from './publicar-mascota/publicar-mascota.component';
+import { RegistrarMascotaComponent } from './registrar-mascota/registrar-mascota.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,6 +16,8 @@ export const routes: Routes = [
   {path: 'crear-cuenta', component: CrearCuentaComponent},
   {path: 'sobre-nosotros', component: SobreNosotrosComponent},
   {path: 'mi-perfil', component: MiPerfilComponent},
+  {path: 'publicarMascota', component: PublicarMascotaComponent},
+  {path: 'registrarMascota', component: RegistrarMascotaComponent},
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

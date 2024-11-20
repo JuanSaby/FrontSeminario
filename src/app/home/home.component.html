@@ -13,12 +13,10 @@
    <div class="search-bar">
        <input type="text" id="searchInput" placeholder="Búsqueda avanzada">
        <button onclick="performSearch()">Buscar</button>
-       <div *ngIf="isLoggedIn() && hasRole(2)">
         <button class="adopt-button" (click)="adoptar()">Adoptar</button>
     </div>
     
     
-   </div>
 
    <div class="button-container">
        <button class="button" (click)="filtrarGatos()">🐈Gatos</button>
