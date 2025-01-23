@@ -7,7 +7,7 @@
       <div class="form-group">
         <label for="mascota">Selecciona una mascota:</label>
         <select id="mascota" class="form-control" formControlName="mascota">
-          <option *ngFor="let mascota of mascotas" [value]="mascota.id">{{ mascota.nombre }}</option>
+          <option *ngFor="let mascota of mascotas" [value]="mascota.id">{{ mascota.name }}</option>
         </select>
         <button type="button" class="btn btn-link" (click)="irARegistrarMascota()">
           + Agregar nueva mascota
