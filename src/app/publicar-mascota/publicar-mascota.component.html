@@ -1,32 +1,34 @@
-<app-header></app-header> <!-- Agrega el componente de encabezado aquí -->
-<div class="container">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="publicar-mascota.component.css">
+</head>
+<div class="publicar-mascota-container">
   <h2>Publicar Mascota</h2>
+
   <form [formGroup]="publicarForm" (ngSubmit)="onSubmit()">
-      <!-- Seleccionar Mascota -->
-      <div class="form-group" *ngIf="mascotas && mascotas.length > 0; else noMascotas">
-          <label for="mascota">Selecciona una mascota:</label>
-          <select id="mascota" class="form-control" formControlName="mascota">
-              <option *ngFor="let mascota of mascotas" [value]="mascota.id">{{ mascota.name }}</option>
-          </select>
-          <button type="button" class="btn btn-link" (click)="irARegistrarMascota()">
-              + Agregar nueva mascota
-          </button>
-      </div>
-      <!-- Mensaje cuando no hay mascotas -->
-      <ng-template #noMascotas>
-          <p>No tienes mascotas registradas.</p>
-          <button type="button" class="btn btn-primary" (click)="irARegistrarMascota()">Registrar una mascota</button>
-      </ng-template>
+    <!-- Ciudad de origen -->
+    <label for="ciudad">Ciudad de origen:</label>
+    <select id="ciudad" formControlName="ciudad" required>
+      <option value="" disabled selected>Seleccione una ciudad</option>
+      <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+    </select>
 
-      <!-- Seleccionar Ciudad -->
-      <div class="form-group">
-          <label for="ciudad">Ciudad de origen:</label>
-          <select id="ciudad" class="form-control" formControlName="ciudad">
-              <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
-          </select>
-      </div>
+    <!-- Botón para registrar nueva mascota -->
+    <button type="button" class="btn-registrar" (click)="irARegistrarMascota()">
+      Registrar una nueva mascota
+    </button>
 
-      <!-- Botón de enviar -->
-      <button type="submit" class="btn btn-primary" [disabled]="publicarForm.invalid">Publicar</button>
+    <!-- Botón de publicación (Deshabilitado hasta completar los campos) -->
+    <button type="submit" class="btn-publicar" [disabled]="publicarForm.invalid || !mascotaRegistrada">
+      Publicar Mascota
+    </button>
+
+    <!-- Botón para cancelar -->
+    <button type="button" class="btn-cancelar" (click)="volverAlHome()">
+      Cancelar
+    </button>
   </form>
 </div>
